@@ -1,12 +1,12 @@
 (function() {
-
+  
   'use strict';
 
   if(navigator.serviceWorker)
   {
     navigator.serviceWorker.register('/sw.js');
   }
-  
+
   var ENTER_KEY = 13;
   var newTodoDom = document.getElementById('new-todo');
   var syncDom = document.getElementById('sync-wrapper');
@@ -23,7 +23,7 @@
   // We have to create a new todo document and enter it in the database
   function addTodo(text) {
 
-    if(trimmedText <= 0) return;
+    if ( text.length <= 0 ) return;
 
     var todo = {
       _id: new Date().toISOString(),

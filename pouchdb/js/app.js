@@ -2,6 +2,11 @@
 
   'use strict';
 
+  if(navigator.serviceWorker)
+  {
+    navigator.serviceWorker.register('/sw.js');
+  }
+  
   var ENTER_KEY = 13;
   var newTodoDom = document.getElementById('new-todo');
   var syncDom = document.getElementById('sync-wrapper');
